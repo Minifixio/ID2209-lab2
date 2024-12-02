@@ -1,5 +1,5 @@
 ---
-title: ID2209
+title: ID2223-lab2
 emoji: 💬
 colorFrom: yellow
 colorTo: purple
@@ -9,4 +9,4 @@ app_file: app.py
 pinned: false
 ---
 
-An example chatbot using [Gradio](https://gradio.app), [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/v0.22.2/en/index), and the [Hugging Face Inference API](https://huggingface.co/docs/api-inference/index).
+ID2223-lab2 UI for job cover letters
