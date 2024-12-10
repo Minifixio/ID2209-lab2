@@ -189,8 +189,17 @@ These insights were instrumental in refining the training process to achieve bet
 
     dataset = dataset.map(format_cover_letter_with_labels, batched=True)
    ```
-2. **Fine-Tuning Configuration:**
-    - Using the pre-trained model, we fine-tuned it on the cover letter dataset. The fine-tuning process was conducted on Colab’s TPU with a batch size of 2 and the adamw_8bit optimizer.
+Our attempt to fine-tune the model on the ShashiVish/cover-letter-dataset was not as successful as anticipated. Despite the goal of improving the model's ability to generate personalized cover letters, the process resulted in high training losses and suboptimal performance. Below, we analyze the challenges and potential reasons for these outcomes :
+
+1. **Dataset Misalignment**:  
+   The initial **FineTome** dataset had a structured, instructional style, while the new dataset focused on personalized, narrative-style text, causing adaptation difficulties.
+
+2. **Data Variability**:  
+   Inconsistencies in data presentation (e.g., qualifications and experiences) hindered model generalization.
+
+3. **Overfitting Risks**:  
+   Fine-tuning on a small, specialized dataset after prior training likely caused overfitting to specific patterns.
+
 
 
 
