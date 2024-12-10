@@ -120,6 +120,22 @@ That way, we could run the inference on Hugging Face's free CPU because otherwis
    - We chose the `unsloth/Llama-3.2-1B-Instruct` model for its balance between size and performance. The 1B parameter model is small enough to fine-tune efficiently on Colab's TPU while still providing good performance.
    - We used 4-bit quantization to reduce the model size and memory footprint, making it feasible to run inference on CPUs.
 
+   The performance of the fine-tuned model was evaluated on a smaller dataset (1k samples) over 5 epochs. Detailed hyperparameter tuning experiments and results can be found in the notebook `model_performance.ipynb` located in the `/notebook` folder.
+
+- **3. Key Hyperparameters and Their Impact on Model Performance:**
+
+1. **Number of Training Epochs**: Training loss consistently decreased with more epochs, indicating that the model effectively learned from the data with sufficient training opportunities. ![](assets/average_loss_per_epoch.jpeg)
+    
+2. **Learning Rate**: Higher learning rates helped reduce training loss per epoch more effectively, likely by avoiding local minima. However, careful tuning was necessary to prevent unstable convergence. ![](assets/average_loss_per_epoch_learning_rate.jpeg)
+    
+3. **Learning Rate Scheduler (`lr_scheduler_type`)**: Experiments compared linear, constant, and cosine schedulers. Results showed no significant improvement in model performance over the default scheduler. ![](assets/average_loss_per_epoch_rate_scheduler.jpeg)
+    
+4. **Weight Decay**: This regularization technique penalized large weights to reduce overfitting. Among tested values (0.001, 0.01, and 0.05), `0.001` produced the best average loss. ![](assets/average_loss_per_epoch_weight_decay.jpeg)
+    
+
+These insights were instrumental in refining the training process to achieve better results with limited computational resources.
+
+
 ### Data-Centric Approach
 
 1. **Fine-Tuning on Cover Letter Dataset**:
