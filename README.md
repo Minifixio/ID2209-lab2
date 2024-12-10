@@ -126,7 +126,7 @@ That way, we could run the inference on Hugging Face's free CPU because otherwis
 
 1. **Number of Training Epochs**: Training loss consistently decreased with more epochs, indicating that the model effectively learned from the data with sufficient training opportunities. ![](assets/average_loss_per_epoch.jpeg)
     
-2. **Learning Rate**: Higher learning rates helped reduce training loss per epoch more effectively, likely by avoiding local minima. However, careful tuning was necessary to prevent unstable convergence. ![](assets/average_loss_per_epoch_learning_rate.jpeg)
+2. **Learning Rate**: Higher learning rates helped reduce training loss per epoch more effectively, likely by avoiding local minima. However, careful tuning was necessary to prevent unstable convergence. ![](assets/average_loss_per_epoch_learning_rate_new.png)
     
 3. **Learning Rate Scheduler (`lr_scheduler_type`)**: Experiments compared linear, and cosine schedulers. Results showed no significant improvement in model performance over the default scheduler. ![](assets/average_loss_per_epoch_rate_scheduler_new.png)
     
