@@ -128,7 +128,7 @@ That way, we could run the inference on Hugging Face's free CPU because otherwis
     
 2. **Learning Rate**: Higher learning rates helped reduce training loss per epoch more effectively, likely by avoiding local minima. However, careful tuning was necessary to prevent unstable convergence. ![](assets/average_loss_per_epoch_learning_rate.jpeg)
     
-3. **Learning Rate Scheduler (`lr_scheduler_type`)**: Experiments compared linear, constant, and cosine schedulers. Results showed no significant improvement in model performance over the default scheduler. ![](assets/average_loss_per_epoch_rate_scheduler.jpeg)
+3. **Learning Rate Scheduler (`lr_scheduler_type`)**: Experiments compared linear, and cosine schedulers. Results showed no significant improvement in model performance over the default scheduler. ![](assets/average_loss_per_epoch_rate_scheduler_new.png)
     
 4. **Weight Decay**: This regularization technique penalized large weights to reduce overfitting. Among tested values (0.001, 0.01, and 0.05), `0.001` produced the best average loss. ![](assets/average_loss_per_epoch_weight_decay_new.png)
     
